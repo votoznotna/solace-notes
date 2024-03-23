@@ -12,7 +12,7 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Projects details
+## Project details
 
 Notes project is using NextJS + NextUI + TailwindCSS + Zod(for validation) + react-icons + Prisma ORM configured for sqlite local DB. The Demo of UX usage is provided.
 
