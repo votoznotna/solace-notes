@@ -1,11 +1,10 @@
 ## Getting Started
 
-First, run the development server:
+First, make sure Node is running, install the dependencies and start the development server:
 
 ```bash
+npm i
 npm run dev
-# or
-yarn dev
 # or
 npm run build
 npm start
