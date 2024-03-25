@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Vercel deployment
 
-Navigate (https://[solace-notes-nine.vercel.app](https://solace-notes-nine.vercel.app/)/) to see a hosted/deployed version.
+Navigate [https://solace-notes-nine.vercel.app](https://solace-notes-nine.vercel.app) to see a hosted/deployed version.
 
 ## Project details
 
