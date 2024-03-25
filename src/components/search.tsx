@@ -17,7 +17,6 @@ export default function SearchInput() {
         <Input
           placeholder="Search"
           name="search"
-          className="min-w-60"
           defaultValue={searchParams.get("filter") || ""}
           isClearable
           onClear={() => actions.resetSearch(new FormData())}
