@@ -10,7 +10,13 @@ npm run build
 npm start
 ```
 
+https://solace-notes-nine.vercel.app/
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Vercel deployment
+
+Navigate (https://[nasa-ebay.vercel.app](https://solace-notes-nine.vercel.app/)/) to see a hosted/deployed version.
 
 ## Project details
 
