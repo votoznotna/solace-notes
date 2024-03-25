@@ -18,6 +18,7 @@ const editNoteSchema = z.object({
 
 interface EditNoteFormState {
   id: number;
+  updatedAt: Date;
   content?: string;
   errors: {
     content?: string[];
@@ -38,6 +39,7 @@ export async function editNote(
   if (!result.success) {
     return {
       id: formState.id,
+      updatedAt: formState.updatedAt,
       errors: result.error.flatten().fieldErrors,
     };
   }
@@ -49,8 +51,6 @@ export async function editNote(
 
   revalidatePath("/");
   redirect("/");
-  // revalidatePath(`/notes/${formState.id}`);
-  // redirect(`/notes/${formState.id}`);
 }
 
 export async function deleteNote(id: number) {

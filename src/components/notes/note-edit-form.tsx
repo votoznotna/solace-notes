@@ -13,10 +13,10 @@ interface NoteEditFormProps {
 }
 
 export default function NoteEditForm({ note }: NoteEditFormProps) {
-  // const [content, setContent] = useState(note.content);
   const [formState, editNoteAction] = useFormState(actions.editNote, {
     id: note.id,
     content: note.content,
+    updatedAt: note.updatedAt,
     errors: {},
   });
 
@@ -24,6 +24,9 @@ export default function NoteEditForm({ note }: NoteEditFormProps) {
 
   return (
     <section className="relative">
+      <label className="flex w-full justify-end text-sm">
+        {`${note.updatedAt.toLocaleDateString()} ${note.updatedAt.toLocaleTimeString()}`}
+      </label>
       <form action={editNoteAction}>
         <Textarea
           name="content"

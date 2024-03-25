@@ -3,8 +3,9 @@ import { fetchAllNotes } from "@/db/queries/notes";
 
 export default async function Home() {
   return (
-    <section>
+    <main>
       <NoteList fetchData={() => fetchAllNotes()} />
-    </section>
+      <footer className="min-h-4"></footer>
+    </main>
   );
 }
