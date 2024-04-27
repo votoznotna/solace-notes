@@ -1,5 +1,5 @@
 import type { Note } from "@prisma/client";
-import Link from "next/link";
+import NoteItem from "./note";
 
 interface PostListProps {
   fetchData: () => Promise<Note[]>;
@@ -9,16 +9,7 @@ export default async function NoteList({ fetchData }: PostListProps) {
   const notes = await fetchData();
 
   const renderedNotes = notes.map((note) => {
-    return (
-      <section key={note.id} className="bg-yellow-200 shadow">
-        <Link
-          href={`/notes/${note.id}`}
-          className="flex justify-between items-center p-2 border rounded"
-        >
-          <div>{note.content}</div>
-        </Link>
-      </section>
-    );
+    return <NoteItem key={note.id} note={note} />;
   });
 
   return (
