@@ -7,7 +7,7 @@ interface NoteProps {
   note: Note;
 }
 
-export default async function NoteItem({ note }: NoteProps) {
+export default function NoteItem({ note }: NoteProps) {
   return (
     <section className="bg-yellow-200 shadow">
       <Link
