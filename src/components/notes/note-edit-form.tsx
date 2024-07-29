@@ -1,7 +1,7 @@
 "use client";
 
 import type { Note } from "@prisma/client";
-import { startTransition, useState } from "react";
+// import { startTransition, useState } from "react";
 import * as actions from "@/actions";
 import FormButton from "../common/form-button";
 import { IoTrashOutline } from "react-icons/io5";
@@ -22,10 +22,18 @@ export default function NoteEditForm({ note }: NoteEditFormProps) {
 
   const deleteNote = actions.deleteNote.bind(null, note.id);
 
+  const updatedDate =
+    note.updatedAt instanceof Date
+      ? note.updatedAt.toLocaleDateString()
+      : new Date(note.updatedAt).toLocaleDateString();
+  const updatedTime =
+    note.updatedAt instanceof Date
+      ? note.updatedAt.toLocaleTimeString()
+      : new Date(note.updatedAt).toLocaleTimeString();
   return (
     <section className="relative">
       <label className="flex w-full justify-end text-sm">
-        {`${note.updatedAt.toLocaleDateString()} ${note.updatedAt.toLocaleTimeString()}`}
+        {`${updatedDate} ${updatedTime}`}
       </label>
       <form action={editNoteAction}>
         <Textarea

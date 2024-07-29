@@ -1,12 +1,13 @@
 import Link from "next/link";
+
 import { Suspense } from "react";
 import {
-  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
+
 import { Tooltip } from "@nextui-org/react";
 import { IoCreateOutline } from "react-icons/io5";
 import SearchInput from "@/components/search";
@@ -27,7 +28,11 @@ export default function Header() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <Link href="/notes/new" className="p-2 rounded">
+        <Link
+          href="/notes/new"
+          className="p-2 rounded"
+          aria-label="Go to Note Create Page"
+        >
           <Tooltip content="Create Note">
             <IoCreateOutline size={25} />
           </Tooltip>

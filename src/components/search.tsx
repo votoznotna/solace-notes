@@ -1,13 +1,14 @@
 "use client";
 
 import { Input } from "@nextui-org/react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import * as actions from "@/actions";
 import { IoSearchOutline } from "react-icons/io5";
 
 export default function SearchInput() {
   const searchParams = useSearchParams();
-
+  const pathname = usePathname();
+  if (pathname !== "/") return null;
   return (
     <>
       <form

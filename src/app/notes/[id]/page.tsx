@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
-import { db } from "@/db";
+import { notFound, usePathname } from "next/navigation";
 import NoteEditForm from "@/components/notes/note-edit-form";
+import { getNoteById } from "@/db/queries/notes";
 
 interface NoteEditPageProps {
   params: {
@@ -10,10 +10,7 @@ interface NoteEditPageProps {
 
 export default async function NoteEditPage(props: NoteEditPageProps) {
   const id = parseInt(props.params.id);
-  const note = await db.note.findFirst({
-    where: { id },
-  });
-
+  const note = await getNoteById(id);
   if (!note) {
     return notFound();
   }

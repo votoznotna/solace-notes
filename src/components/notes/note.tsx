@@ -13,6 +13,7 @@ export default function NoteItem({ note }: NoteProps) {
       <Link
         href={`/notes/${note.id}`}
         className="flex justify-between items-center p-2 border rounded"
+        aria-label="Go to Note Edit Page"
       >
         <div>{note.content}</div>
       </Link>
