@@ -8,7 +8,7 @@ import { IoSearchOutline } from "react-icons/io5";
 export default function SearchInput() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  if (pathname !== "/") return null;
+  if (!["/", "/search"].includes(pathname)) return null;
   return (
     <>
       <form

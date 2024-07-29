@@ -5,7 +5,7 @@ import { cache } from "@/lib/cache";
 export function fetchNotesBySearchFilter(filter: string): Promise<Note[]> {
   return db.note.findMany({
     where: {
-      OR: [{ content: { contains: filter } }],
+      OR: [{ content: { contains: filter, mode: "insensitive" } }],
     },
     orderBy: [
       {
